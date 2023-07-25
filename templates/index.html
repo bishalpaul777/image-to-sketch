@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pencil Sketch Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='background.jpg') }}');">
+    <h1>Upload your image to convert to a pencil sketch</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">Convert to Pencil Sketch</button>
+    </form>
+
+    {% if sketch_path %}
+    <div class="container">
+        <div>
+            <h2>Original Image:</h2>
+            <img src="{{ image_path }}" alt="Original Image">
+        </div>
+
+        <div>
+            <h2>Pencil Sketch:</h2>
+            <img src="{{ sketch_path }}" alt="Pencil Sketch">
+        </div>
+    </div>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
