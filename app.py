@@ -10,8 +10,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def pencil_sketch(image):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    inverted_image = 255 - gray_image
-    blurred = cv2.GaussianBlur(inverted_image, (21, 21), sigmaX=0, sigmaY=0)
+    inverted_image = 230 - gray_image
+    blurred = cv2.GaussianBlur(inverted_image, (11, 11), sigmaX=0, sigmaY=0)
     inverted_blurred = 255 - blurred
     pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=230.0)
     return pencil_sketch
