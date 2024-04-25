@@ -13,7 +13,7 @@ def pencil_sketch(image):
     inverted_image = 255 - gray_image
     blurred = cv2.GaussianBlur(inverted_image, (21, 21), sigmaX=0, sigmaY=0)
     inverted_blurred = 255 - blurred
-    pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=256.0)
+    pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=230.0)
     return pencil_sketch
 
 
